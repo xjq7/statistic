@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import Axios, { AxiosRequestConfig } from 'axios';
 
-const url = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:3000' : 'https://mtr-api.xjq.icu';
+const url = process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:6666' : 'https://si.xjq.icu';
 
 const instance = Axios.create({
   baseURL: `${url}/v1`,
