@@ -8,7 +8,7 @@ import { GlobalModule } from './global.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://42.193.148.96/statistic'),
+    MongooseModule.forRoot('mongodb://127.0.0.1/statistic'),
     GlobalModule,
     ReportModule,
     OverviewModule,
