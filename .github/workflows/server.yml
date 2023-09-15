@@ -36,12 +36,6 @@ jobs:
         with:
           node-version: 18.17.0
 
-      - name: Install pnpm
-        run: npm i pnpm -g
-
-      - name: Install Packages
-        run: pnpm install
-
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2.1
         with:
