@@ -9,6 +9,8 @@ const instance = Axios.create({
 });
 
 instance.interceptors.request.use((config) => {
+  const hash = window.location.hash.substring(1);
+  config.headers['app-id'] = hash;
   return config;
 });
 
