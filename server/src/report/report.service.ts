@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { VisitDocument } from 'src/schemas/visit.schema';
+import { VisitDocument } from '../schemas/visit.schema';
 
 export interface ReportData {
   appId: string;

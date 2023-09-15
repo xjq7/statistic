@@ -1,6 +1,6 @@
 import { Controller, Get, Headers, Query } from '@nestjs/common';
-import { DateFilterDto } from 'src/dto/common';
-import { DeviceDto, GetChannelStatDto } from 'src/dto/overview';
+import { DateFilterDto } from '../dto/common';
+import { DeviceDto, GetChannelStatDto } from '../dto/overview';
 import { OverviewService } from './overview.service';
 
 @Controller('/v1/overview')

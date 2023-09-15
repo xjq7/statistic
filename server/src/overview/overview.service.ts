@@ -4,9 +4,9 @@ import { FilterQuery, Model } from 'mongoose';
 import { VisitDocument } from '../schemas/visit.schema';
 import { UAParser } from 'ua-parser-js';
 import IP2Region from 'ip2region';
-import { DateFilterDto } from 'src/dto/common';
-import { CatchError } from 'src/utils/catchError';
-import { DeviceDto, GetChannelStatDto } from 'src/dto/overview';
+import { DateFilterDto } from '../dto/common';
+import { CatchError } from '../utils/catchError';
+import { DeviceDto, GetChannelStatDto } from '../dto/overview';
 
 export enum Dimension {
   os = 'os',
