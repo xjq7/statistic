@@ -19,9 +19,15 @@ dependencies:
   class-validator:
     specifier: ^0.14.0
     version: 0.14.0
+  dayjs:
+    specifier: ^1.11.9
+    version: 1.11.9
   ip2region:
     specifier: ^2.3.0
     version: 2.3.0(@types/node@20.6.0)
+  mongoose:
+    specifier: ^7.5.1
+    version: 7.5.1
   reflect-metadata:
     specifier: ^0.1.13
     version: 0.1.13
@@ -38,7 +44,7 @@ devDependencies:
     version: 10.1.17
   '@nestjs/schematics':
     specifier: ^10.0.0
-    version: 10.0.2(chokidar@3.5.3)(typescript@5.1.6)
+    version: 10.0.2(typescript@5.2.2)
   '@nestjs/testing':
     specifier: ^10.0.0
     version: 10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/platform-express@10.2.5)
@@ -83,10 +89,10 @@ devDependencies:
     version: 6.3.3
   ts-jest:
     specifier: ^29.1.0
-    version: 29.1.1(@babel/core@7.22.17)(jest@29.6.4)(typescript@5.2.2)
+    version: 29.1.1(jest@29.6.4)(typescript@5.2.2)
   ts-loader:
     specifier: ^9.4.3
-    version: 9.4.4(typescript@5.2.2)(webpack@5.88.2)
+    version: 9.4.4(typescript@5.2.2)
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@20.6.0)(typescript@5.2.2)
@@ -112,6 +118,22 @@ packages:
       '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
+  /@angular-devkit/core@16.1.8:
+    resolution: {integrity: sha512-dSRD/+bGanArIXkj+kaU1kDFleZeQMzmBiOXX+pK0Ah9/0Yn1VmY3RZh1zcX9vgIQXV+t7UPrTpOjaERMUtVGw==}
+    engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
+    peerDependencies:
+      chokidar: ^3.5.2
+    peerDependenciesMeta:
+      chokidar:
+        optional: true
+    dependencies:
+      ajv: 8.12.0
+      ajv-formats: 2.1.1
+      jsonc-parser: 3.2.0
+      rxjs: 7.8.1
+      source-map: 0.7.4
+    dev: true
+
   /@angular-devkit/core@16.1.8(chokidar@3.5.3):
     resolution: {integrity: sha512-dSRD/+bGanArIXkj+kaU1kDFleZeQMzmBiOXX+pK0Ah9/0Yn1VmY3RZh1zcX9vgIQXV+t7UPrTpOjaERMUtVGw==}
     engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -122,7 +144,7 @@ packages:
         optional: true
     dependencies:
       ajv: 8.12.0
-      ajv-formats: 2.1.1(ajv@8.12.0)
+      ajv-formats: 2.1.1
       chokidar: 3.5.3
       jsonc-parser: 3.2.0
       rxjs: 7.8.1
@@ -139,7 +161,7 @@ packages:
         optional: true
     dependencies:
       ajv: 8.12.0
-      ajv-formats: 2.1.1(ajv@8.12.0)
+      ajv-formats: 2.1.1
       chokidar: 3.5.3
       jsonc-parser: 3.2.0
       rxjs: 7.8.1
@@ -157,6 +179,19 @@ packages:
       inquirer: 8.2.4
       symbol-observable: 4.0.0
       yargs-parser: 21.1.1
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
+  /@angular-devkit/schematics@16.1.8:
+    resolution: {integrity: sha512-6LyzMdFJs337RTxxkI2U1Ndw0CW5mMX/aXWl8d7cW2odiSrAg8IdlMqpc+AM8+CPfsB0FtS1aWkEZqJLT0jHOg==}
+    engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
+    dependencies:
+      '@angular-devkit/core': 16.1.8
+      jsonc-parser: 3.2.0
+      magic-string: 0.30.0
+      ora: 5.4.1
+      rxjs: 7.8.1
     transitivePeerDependencies:
       - chokidar
     dev: true
@@ -1013,6 +1048,21 @@ packages:
       - chokidar
     dev: true
 
+  /@nestjs/schematics@10.0.2(typescript@5.2.2):
+    resolution: {integrity: sha512-DaZZjymYoIfRqC5W62lnYXIIods1PDY6CGc8+IpRwyinzffjKxZ3DF3exu+mdyvllzkXo9DTXkoX4zOPSJHCkw==}
+    peerDependencies:
+      typescript: '>=4.8.2'
+    dependencies:
+      '@angular-devkit/core': 16.1.8
+      '@angular-devkit/schematics': 16.1.8
+      comment-json: 4.2.3
+      jsonc-parser: 3.2.0
+      pluralize: 8.0.0
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - chokidar
+    dev: true
+
   /@nestjs/testing@10.2.5(@nestjs/common@10.2.5)(@nestjs/core@10.2.5)(@nestjs/platform-express@10.2.5):
     resolution: {integrity: sha512-CaM8STNVyDdMhYnDD6aYnVWPz2ienrSDgMl7nkCAC0wcvKhldWuXQ2syTvQE243IIFOX/bMNuW3MsiqbaXfXxQ==}
     peerDependencies:
@@ -1589,10 +1639,8 @@ packages:
     hasBin: true
     dev: true
 
-  /ajv-formats@2.1.1(ajv@8.12.0):
+  /ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependencies:
-      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -2191,6 +2239,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /dayjs@1.11.9:
+    resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
+    dev: false
 
   /debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -4999,7 +5051,7 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /ts-jest@29.1.1(@babel/core@7.22.17)(jest@29.6.4)(typescript@5.2.2):
+  /ts-jest@29.1.1(jest@29.6.4)(typescript@5.2.2):
     resolution: {integrity: sha512-D6xjnnbP17cC85nliwGiL+tpoKN0StpgE0TeOjXQTU6MVCfsB4v7aW05CgQ/1OywGb0x/oy9hHFnN+sczTiRaA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -5020,7 +5072,6 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.22.17
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 29.6.4(@types/node@20.6.0)(ts-node@10.9.1)
@@ -5033,7 +5084,7 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /ts-loader@9.4.4(typescript@5.2.2)(webpack@5.88.2):
+  /ts-loader@9.4.4(typescript@5.2.2):
     resolution: {integrity: sha512-MLukxDHBl8OJ5Dk3y69IsKVFRA/6MwzEqBgh+OXMPB/OD01KQuWPFd1WAQP8a5PeSCAxfnkhiuWqfmFJzJQt9w==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -5045,7 +5096,6 @@ packages:
       micromatch: 4.0.5
       semver: 7.5.4
       typescript: 5.2.2
-      webpack: 5.88.2
     dev: true
 
   /ts-node@10.9.1(@types/node@20.6.0)(typescript@5.2.2):
