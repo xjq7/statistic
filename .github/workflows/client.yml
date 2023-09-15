@@ -47,10 +47,6 @@ jobs:
       - name: Build
         run: pnpm build
 
-      # 移除 部署 cdn 的文件
-      - name: remove static file which is deploy cdn
-        run: rm -rf dist/assets
-
       # 推到服务器
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2.1
