@@ -39,7 +39,7 @@ jobs:
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.2.1
         with:
-          switches: -avzr --delete
+          switches: -avzr --exclude={'node_modules'}
           path: server/
           remote_path: /root/project/statistic/server
           remote_host: ${{ secrets.SSH_HOST }}
