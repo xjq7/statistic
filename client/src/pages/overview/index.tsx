@@ -12,7 +12,7 @@ import Channel from './components/channel';
 
 const { RangePicker } = DatePicker;
 
-const defaultDate: [dayjs.Dayjs, dayjs.Dayjs] = [dayjs().subtract(30, 'd').startOf('d'), dayjs().endOf('d')];
+const defaultDate: [dayjs.Dayjs, dayjs.Dayjs] = [dayjs().subtract(1, 'd').startOf('d'), dayjs().endOf('d')];
 
 export default function Overview() {
   const [date, setDate] = useState(defaultDate);
