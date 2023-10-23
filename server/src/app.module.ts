@@ -5,6 +5,7 @@ import { ReportModule } from './report/report.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { OverviewModule } from './overview/overview.module';
 import { GlobalModule } from './global.module';
+import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
@@ -12,6 +13,12 @@ import { GlobalModule } from './global.module';
     GlobalModule,
     ReportModule,
     OverviewModule,
+    ThrottlerModule.forRoot([
+      {
+        ttl: 1000,
+        limit: 6,
+      },
+    ]),
   ],
   controllers: [AppController],
   providers: [AppService],
